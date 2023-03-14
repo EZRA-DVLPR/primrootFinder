@@ -1,6 +1,13 @@
 #Find an example where g is a Prim Root mod p:prime but not mod p^2
 #this means you would have to use g + p as the prim root
 
+#determines gcd(m,n) and returns that number
+def gcd(m,n):
+    gcd = 1
+    for i in range(1, min(m,n) + 1):
+        if m % i == 0 and n % i == 0: gcd = i
+    return gcd
+
 #determines if n is prime and returns a boolean
 def isPrime(n):
     #edge cases: n <= 1
@@ -91,6 +98,11 @@ def eulerPhi(n):
 #calculated by finding the smallest positive integer r s.t. a^r === 1 mod m
 def orderMod(m, n):
 
+    #if gcd(m,n) != 1 => cant find order
+    if gcd(m,n) != 1:
+        return -1
+
+
     #i will be the power that will be iterated until an exit condition is reached
     #exit conditions:
     #   m^i % n mod 1 -> found it
@@ -123,7 +135,7 @@ def findPrimRoots(n):
         if primRootCalc(i, n): primRoots.append(i)
 
     #print the entire list of primitive roots
-    for p in primRoots: print(p)
+    #for p in primRoots: print(p)
 
     return primRoots
 
@@ -154,6 +166,16 @@ def extraCredit():
 
 #later add user input
 #func: user input grabbing
+#   0 - gcd
+#   1 - isPrime
+#   2 - getPrimeFactors
+#   3 - eulerPhi
+#   4 - orderMod
+#   5 - getPrimeFactors
+#   6 - primRootCalc
+#   7 - extraCredit
 
-#findPrimRoots(23)
-#extraCredit()
+
+#findPrimRoots(63)
+#print(gcd(148,86))
+extraCredit()
