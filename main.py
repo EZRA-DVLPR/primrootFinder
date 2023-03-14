@@ -20,6 +20,9 @@ def isPrime(n):
         
     return True
 
+#finds closest prime to a given number
+#see code from:https://github.com/EZRA-DVLPR/Closest_Prime/blob/main/main.py
+
 #returns a list of all prime factors of n
 def getPrimeFactors(n):
     #edge cases: n <= 1
@@ -71,10 +74,11 @@ def eulerPhi(n):
     else:
         #loop through entirety of prime factors
         while index != len(pfactors):
-
+            
             #if there is a new prime then we input the data for the old prime and update this current data
             if pfactors[index] != prime:
                 pPairs.append([prime, pAmt])
+                prime = pfactors[index]
                 pAmt = 1
 
             #its the same prime so we increment pAmt
@@ -83,15 +87,13 @@ def eulerPhi(n):
 
             index += 1
 
-    #ends on a prime that has more than one isntance in pfactors
-    if pAmt != 1:
         pPairs.append([prime, pAmt])
 
     result = 1
     #calculate the result and return it
     for pList in pPairs:
         result *= ((pList[0] ** pList[1]) - (pList[0] ** (pList[1] - 1)))
-
+    
     return result
 
 #Order of an element m mod n
@@ -132,7 +134,8 @@ def findPrimRoots(n):
     #finds all primitive roots starting from 2 to n-1
     primRoots = []
     for i in range(2, n):
-        if primRootCalc(i, n): primRoots.append(i)
+        if primRootCalc(i, n): 
+            primRoots.append(i)
 
     #print the entire list of primitive roots
     #for p in primRoots: print(p)
@@ -173,9 +176,12 @@ def extraCredit():
 #   4 - orderMod
 #   5 - getPrimeFactors
 #   6 - primRootCalc
-#   7 - extraCredit
+#   7 - findPrimRoots
+#   8 - extraCredit
 
 
-#findPrimRoots(63)
+#print(findPrimRoots(7))
+#print(findPrimRoots(9))
 #print(gcd(148,86))
-extraCredit()
+#extraCredit()
+#print(orderMod(2,9))
