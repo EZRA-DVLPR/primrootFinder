@@ -156,4 +156,4 @@ def extraCredit():
 #func: user input grabbing
 
 #findPrimRoots(23)
-extraCredit()
+#extraCredit()
