@@ -33,6 +33,6 @@ https://en.wikipedia.org/wiki/Euler%27s_totient_function
 
 https://en.wikipedia.org/wiki/Multiplicative_order
 
-### 
+### Primitive Roots
 
 https://en.wikipedia.org/wiki/Primitive_root_modulo_n
