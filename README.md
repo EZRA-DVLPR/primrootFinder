@@ -20,3 +20,19 @@ This program will have user input that performs various functions leading up to 
    
    8 - extraCredit
    
+
+## What is __?
+
+See the below links for a brief explanation on the various mathematical topics being discussed/coded in this program.
+
+### Euler Phi Function
+
+https://en.wikipedia.org/wiki/Euler%27s_totient_function
+
+### Multiplicative Order
+
+https://en.wikipedia.org/wiki/Multiplicative_order
+
+### 
+
+https://en.wikipedia.org/wiki/Primitive_root_modulo_n

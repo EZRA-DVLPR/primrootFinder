@@ -21,7 +21,18 @@ def isPrime(n):
     return True
 
 #finds closest prime to a given number
-#see code from:https://github.com/EZRA-DVLPR/Closest_Prime/blob/main/main.py
+def findClosestPrime(n):
+
+    #increase distance by 1 whenever a prime is not found
+    dist = 1
+    while (not (isPrime(n + dist))) and (not (isPrime(n - dist))):
+        dist += 1
+        
+    #one of them is prime. find and return it
+    if isPrime(n + dist):
+        return n + dist 
+    else:
+        return n - dist
 
 #returns a list of all prime factors of n
 def getPrimeFactors(n):
@@ -48,7 +59,6 @@ def getPrimeFactors(n):
         return primeFactors           
 
 #Euler Phi Function
-#see: https://en.wikipedia.org/wiki/Euler%27s_totient_function
 def eulerPhi(n):
 
     #handle invalid input
@@ -172,9 +182,9 @@ def extraCredit():
 #   0 - gcd
 #   1 - isPrime
 #   2 - getPrimeFactors
-#   3 - eulerPhi
-#   4 - orderMod
-#   5 - getPrimeFactors
+#   3 - find closest prime
+#   4 - eulerPhi
+#   5 - orderMod
 #   6 - primRootCalc
 #   7 - findPrimRoots
 #   8 - extraCredit
